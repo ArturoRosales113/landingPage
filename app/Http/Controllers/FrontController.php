@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Alert;
+use Mail;
+use App\Ticket;
+use App\Mail\TicketRecieved;
 
 class FrontController extends Controller
 {
@@ -23,8 +26,15 @@ class FrontController extends Controller
       ]);
 
       $data= $request->all();
-       alert()->success('Gracias por participar!!', 'Ticket guardado satisfactoriamente');
+       $ticket = Ticket::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'ticket' => $data['ticket'],
+       ]);
+
+       Mail::to($data['email'])->send(new TicketRecieved($ticket));
        return redirect()->route('front.index');
+
 
 
    }

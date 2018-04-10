@@ -18,8 +18,12 @@ signup-page
   </div>
  @endif
            <div class="row">
-               <div class="col-xs-12 col-lg-8 ml-auto mr-auto">
 
+               <div class="col-xs-12 col-lg-8 ml-auto mr-auto">
+                <div class="image">
+                 <img src="{{url('img/logo_ilv_blanco.png')}}" alt="">
+                </div>
+                <br>
                  <h2>¡Participa cada mes para ganar un <br> <strong>Certificado de $500.00!</strong></h2>
                  <p class="description text-justify">
                   El ganador será quien más tickets registre durante el mes y se anunciará los primeros días del mes posterior.
@@ -30,7 +34,7 @@ signup-page
                  <h5>¡Gracias por preferir <a href="http://www.ilveneziano.com.mx">Il Veneziano!</a></h5>
                  <div class="row mt-5 mb-5">
 
-                  <div class="col-xs-6 col-lg-8 offset-lg-2">
+                  <div class="col-xs-6 col-lg-8 offset-lg-2 d-none d-lg-block">
                    <h6 class="text-left">Condiciones: </h6>
                    <ul class="text-left">
                     <li>No acumulable con otras promociones.</li>
@@ -42,7 +46,6 @@ signup-page
                  </div>
                </div>
                <div class="col-xs-12 col-lg-4 mr-auto">
-
                    <div class="card card-signup">
                        <div class="card-body">
                         <h4 class="card-title text-center">Registrar Ticket</h4>
@@ -93,7 +96,19 @@ signup-page
                         {!! Form::close() !!}
                        </div>
                    </div>
+                   <div class="row">
+                    <div class="col-xs-12 mr-auto ml-auto d-block d-lg-none">
+                     <h6 class="text-left">Condiciones: </h6>
+                     <ul class="text-left">
+                      <li>No acumulable con otras promociones.</li>
+                      <li>No incluye el servicio.</li>
+                      <li>Utilizable sólo en una visita.</li>
+                      <li>Válido durante el mes en el que se entrega.</li>
+                     </ul>
+                    </div>
+                   </div>
                </div>
+
            </div>
        </div>
     </div>
